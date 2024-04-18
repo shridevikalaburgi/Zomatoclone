@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="icon" type="image/x-icon" href="./images/fevicon.png">
+	<title>Best Restaurants in India Zomato</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- bootsrtap css -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+		<!-- custom css -->
+		<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="banner">
+		<div class="conatiner-fluid">
+			<div class="home_banner">
+				<!-- navbar start -->
+				<!-- <nav class="navbar navbar-expand-lg">
+					<div class="container-fluid">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+       						 <li class="nav-item">
+         						 <a class="nav-link active  text-white" aria-current="page" href="#">Add Restaurants</a>
+       						 </li>
+       						  <li class="nav-item">
+         						 <a class="nav-link  text-white" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+       						 </li>
+       						  <li class="nav-item">
+         						 <a class="nav-link  text-white" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1" aria-current="page" href="#" >Sign Up</a>
+       						 </li>
+      						</ul>
+   						 </div>
+					</div>
+				</nav> -->
+				<nav class = 'navbar navbar-expand-lg navbar-light '>
+  <div class = 'container'>
+    <a class = 'navbar-brand text-white' href = '#'></a>
+    <button class = 'btn btn-danger navbar-toggler border-3 px-2' type = 'button' data-bs-toggle = 'offcanvas'
+            data-bs-target = '#offcanvasExample' aria-controls = 'offcanvasExample'
+    >
+    <i class="fa-solid fa-bars text-white"></i>
+      <!-- <img style = 'width: 30px' src = 'image/text-center.svg' alt = 'menu icon'> -->
+    </button>
+    <div class = 'offcanvas offcanvas-start-lg' tabindex = '-1' id = 'offcanvasExample'
+         aria-labelledby = 'offcanvasExampleLabel'
+    >
+      <div class = 'offcanvas-header d-flex d-lg-none'>
+        <h5 class = 'offcanvas-title text-white' id = 'offcanvasExampleLabel'>Navbar</h5>
+        <a href='javascript:void(0) '
+                class = 'text-reset p-0'
+                data-bs-dismiss = 'offcanvas'
+                aria-label = 'close'
+        >
+          <svg xmlns = 'http://www.w3.org/2000/svg'
+               width = '24'
+               height = '24'
+               fill = '#FFFFFF'
+               class = 'bi bi-x-circle'
+               viewBox = '0 0 16 16'
+          >
+            <path d = 'M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/>
+            <path d = 'M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/>
+          </svg>
+        </a>
+      </div>
+      <div class = 'offcanvas-body p-lg-0'>
+        <ul class = 'navbar-nav'>
+          <li class = 'nav-item'>
+            <a class = 'nav-link active' aria-current = 'page' href = '#'>Add Restaurants</a>
+          </li>
+          <li class = 'nav-item'>
+            <a class = 'nav-link active' aria-current = 'page' href = '#' aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+          </li>
+          <li class = 'nav-item'>
+            <a class = 'nav-link active' aria-current = 'page'aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1" aria-current="page">Sign up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+				<!-- Modal Login-->
+<div class="modal fade my-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+        	<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+       <span>New to Zomato?</span> 
+       <a href="#" class="nav-link text-danger">Create Account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal register-->
+<div class="modal fade my-5" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign-up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+        	<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+<div class="form-floating">
+  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <label for="floatingPassword">Password</label>
+</div>
+
+<!-- checkbox -->
+<div class="form-check p-3">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+   <span class="spn">I agree to Zomato's </span>
+<a href="#" class="c2">Terms of Service, Privacy Policy</a>and 
+<a href="#" class="c2">Content Policies</a>
+  </label>
+</div>
+<div class="button disabled bg-secondary">
+	<button class=>Create Account</button>
+</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+       <span>Already have an account? </span> 
+<a href="#" class="nav-link text-danger">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+				<div class="banner_heading p-4">
+					<h1 class="h1">Zomato</h1>
+					<div class='para'>
+						<p>
+						Find the best restaurants, cafés<br> and bars in India
+					</p>																									
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container row align-items-center justify-content-center">
+		<div class="popular_menu d-flex row justify-content-center">
+			<div class="col-md-6 text-center">
+					<h1 class="h1 text-end">Popular locations in </h1>
+			</div>
+			<div class="col-md-1 text-center">
+				<img src="./images/flag.png" alt="india">
+			</div>
+			<div class="col-md-1 text-center">
+				 <h1 class="d-inline h1 mx-4 india">India</h1>
+			</div>
+			<div class="col-md-2 text-center">
+				 <!-- <h1 class="d-inline h1">India</h1> -->
+			</div>
+		</div>
+		<div class="row m-0">
+			<div class="col-12 p-3 text-center para1 text-secondary">
+				<p>
+					From swanky upscale restaurants to the cosiest hidden gems serving the most incredible food, Zomato covers it all. Explore menus, and millions of restaurant photos and reviews from users just like you, to find your next great meal.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="row buttons w-100 m-">
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Agra Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Ahmedabad Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Amravati Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Allahabad Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Aurangbad Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Bengalore Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Bhopal Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Belagavi Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Chandigarh Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Cuttack Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Chennai Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Coimbatore Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Delhi NCR Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Darjeeling Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Dharamshala Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Gangtok Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Goa Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Gorakhpur Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Guntur Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Guwahati Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Gwalior Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Haridwar Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Hyderabad Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Indore Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Island Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Jabalpur Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Jaipur Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Jalandar Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Jammu Restaurants</button>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="c1">
+				<button class="btn btn-light w-100">Jamnagar Restaurants</button>
+			</div>
+		</div>
+	</section>
+
+
+<section class="container-fluid footer_menu">
+	<div class="footer mt-5">
+		<div class="row">
+			<div class="col-md-8">
+				<h1>Zomato</h1>
+			</div>
+			<div class="col-md-2">
+
+				<div class="dropdown">
+                   <button class="btn btn-secondary dropdown-toggle btn_India  my-2 btndrop" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    					<img src="./images/flag.png" alt=""> India
+  				</button>
+  				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  					<h1>kasjdyasjkdh</h1>
+  				</div>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+			</div>
+			<div class="col-md-2 ">
+				<div class="dropdown">
+  					<button class="btn btn-secondary dropdown-toggle btn_India my-2 btndrop" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    					<img src="./images/flag.png   " alt="">English
+  				</button>
+  						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    					<li><a class="dropdown-item" href="#">Action</a></li>
+    					<li><a class="dropdown-item" href="#">Another action</a></li>
+    					<li><a class="dropdown-item" href="#">Something else here</a></li>
+  					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row ">
+			<div class="col-md-2  ">
+				<h6>ABOUT ZOMATO</h6>
+				<div>
+					<ol>
+						<li><a href="#">Who We Are</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Work With us</a></li>
+						<li><a href="#">Investors Realtions</a></li>
+						<li><a href="#">Report Fraud</a></li>
+						<li><a href="#">Press Kit</a></li>
+						<li><a href="#">Contact Us</a></li>
+
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<h6>ZOMAVERSE</h6>
+				<div>
+					<ol>
+						<li><a href="#">Zomato</a></li>
+						<li><a href="#">Blinkit</a></li>
+						<li><a href="#">Feeding India</a></li>
+						<li><a href="#">Hyperpure</a></li>
+						<li><a href="#">Zomaland</a></li>
+
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h6>FOR RESTAURANTS</h6>
+				<div>
+					<ol>
+						<li><a href="#">Partner With Us</a></li>
+						<li><a href="#">Apps for you</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-2">
+			<h6>LEARN MORE</h6>
+			<div>
+				<ol>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Security</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Sitemap</a></li>
+				</ol>
+			</div>
+		</div>
+			<div class="col-md-3 links">
+			<h6>SOCIAL LINKS</h6>
+			<div>
+				<ol>
+					<li><a href="#">
+                    <i class="fa-brands fa-square-instagram"></i>
+					</a>
+					</li>
+					<li><a href="#">
+                    <i class="fa-brands fa-square-twitter"></i>
+					</a>
+					</li>
+					<li><a href="#">
+						<i class="fa-brands fa-youtube"></i>
+					</a></li>
+					<li><a href="#">
+						<i class="fa-brands fa-facebook"></i>
+					</a></li>
+				</ol>
+			</div>
+		</div>
+		<div class="appstore">
+			<img src="./images/a1.png" alt="">
+		</div>
+		</div>
+	</div>
+<!-- 	<div class="p2">
+		By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2024 © Zomato™ Ltd. All rights reserved.
+	</div> -->
+</section>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
